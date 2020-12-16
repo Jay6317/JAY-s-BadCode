@@ -1,0 +1,26 @@
+//用选择法对10个整数排序
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int i, j, min, c;
+	int a[10];
+	cout << "输入10个整数" << endl;	
+	for (i = 0; i < 10; i++)
+		cin >> a[i];
+
+	for (i = 0; i < 9; i++)
+	{
+		min = i;
+		for (j = i + 1; j < 10; j++)
+			if (a[j] < a[min])
+				min = j;
+		c = a[min]; a[min] = a[i]; a[i] = c;
+	}
+
+	for (i = 0; i < 10; i++)
+		cout << a[i] << endl;
+
+}
